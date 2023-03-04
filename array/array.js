@@ -21,6 +21,7 @@ class MyArray {
   }
   delete(index) {
     const item = this.data[index];
+    if (!item) return;
     this.shiftIndex(index);
 
     return item;
@@ -35,3 +36,10 @@ class MyArray {
 }
 
 const myArray = new MyArray();
+console.log(myArray.push('Luis'));
+console.log(myArray.push('Jose'));
+console.log(myArray.push('Fer'));
+console.log(myArray.delete(4));
+console.log(myArray.delete(4));
+console.log(myArray.delete(4));
+console.log(myArray);
