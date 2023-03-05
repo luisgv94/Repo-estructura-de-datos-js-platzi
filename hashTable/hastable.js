@@ -42,6 +42,18 @@ class HashTable {
     return keys;
   }
 
+  getAllKeys2() {
+    const array = this.data;
+    let key = [];
+
+    array.forEach((e) => {
+      e.forEach((k) => {
+        key.push(k[0]);
+      });
+    });
+    return key;
+  }
+
   remove(key) {
     const address = this.hashMethod(key);
     const currentBucket = this.data[address];
