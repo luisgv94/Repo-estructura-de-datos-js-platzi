@@ -44,3 +44,6 @@ class Stack {
 }
 
 const myStack = new Stack();
+console.log(myStack.push(1));
+console.log(myStack.push(2));
+console.log(myStack.pop());
