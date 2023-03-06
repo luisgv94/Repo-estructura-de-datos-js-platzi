@@ -18,6 +18,7 @@ class BinarySearchTree {
     const newNode = new Node(value);
     if (this.root === null) {
       this.root = newNode;
+      return this;
     } else {
       let currentNode = this.root;
       while (true) {
@@ -37,6 +38,24 @@ class BinarySearchTree {
       }
     }
   }
+
+  search(value, tree = this.root) {
+    if (!this.root) return 'The Binary Search Tree is empty';
+    if (!tree) return 'The node is not in the tree';
+
+    if (value < tree.value) {
+      return this.search(value, tree.left);
+    } else if (value > tree.value) {
+      return this.search(value, tree.right);
+    } else {
+      console.log('The value has been finded in the Tree');
+      return tree;
+    }
+  }
 }
 
 const tree = new BinarySearchTree();
+console.log(tree.insert(10));
+console.log(tree.insert(4));
+console.log(tree.insert(20));
+console.log(tree.search(30));
